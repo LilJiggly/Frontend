@@ -5,16 +5,38 @@
 }
 
 body {
-  background-color: #121212;
+  /* background-image: linear-gradient(to bottom right, black, purple); */
   font-size: 1em;
   font-family: Helvetica Neue;
   color: #f4f4f4;
+
+  /* https://codepen.io/P1N2O/pen/pyBNzX */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 }
 
+header {
+  background-color: purple;
+}
 nav {
   background-color: #272727;
   overflow: auto;
   white-space: nowrap;
+  /* position: ; */
 }
 
 ::-webkit-scrollbar {
@@ -25,26 +47,34 @@ ul {
   display: flex;
   flex-direction: row;
   list-style: none;
-  font-size: 14px;
+  font-size: 1em;
 }
 
 li a {
   display: inline-block;
   color: white;
-  background-color: #d483ff;
+  background-color: rgb(82, 0, 125);
   text-align: center;
   padding: 1em 1.5em;
   margin: 0.7em 0em 0.7em 1em;
   text-decoration: none;
   border-radius: 0.3em;
+  transition: ease-in-out 0.5s;
 }
 
-main {
-  /* maak van main een grid container */
+li a:hover {
+  background-color: blue;
+  transform: skew(10deg);
+  -webkit-transform: scale(1.1) rotate(4deg);
+  transform: scale(1.1) rotate(4deg);
+}
+
+section {
+  /* maak vansection een grid container */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
   /* grid-template-columns: repeat(4, 1fr); */
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
   grid-gap: 1em;
   padding: 1em 1em;
   border-radius: 1em;
@@ -56,9 +86,17 @@ img {
   border-radius: 1em 1em 0em 0em;
 }
 
+figure,
 article {
   background-color: #272727;
   border-radius: 1em;
+  transition: ease-out 1s;
+}
+
+figure:hover,
+article:hover {
+  transform: scale(1.03);
+  box-shadow: 0em 0em 2.5em 1.5em #0ff;
 }
 
 .text {
@@ -75,47 +113,200 @@ h2 {
   padding-bottom: 0.2em;
 }
 
-h4 {
-  color: #d483ff;
-  text-decoration: underline;
-}
-
 p {
   line-height: 1.5em;
 }
 
+/* button om de activiteit te boeken */
 button {
   color: white;
-  background-color: #d483ff;
+  background-color: rgb(82, 0, 125);
   text-align: center;
   padding: 1em 1.5em;
   margin: 1em;
   text-decoration: none;
   border-radius: 0.5em;
   border-style: none;
-  font-size: 14px;
+  font-size: 1em;
 }
+
+button:hover{
+  cursor: progress;
+  background-color: purple;
+}
+/* einde button  */
+
+/* formulier opmaak */
+form{
+  background-color: #272727;
+  padding:1em;
+  margin-bottom: 2em ;
+  width: 50vw;
+  margin:auto;
+  margin-top: 1em;
+  border-radius: 1em;
+  border: dotted 3px palegreen ;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+fieldset{
+  font-size: 2em;
+  display:block;
+  margin: 0em;
+  text-align: center;
+  border-bottom: solid 3px purple;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+label{
+  display:block;
+  margin: 0em;
+  text-align: center;
+  padding:0.5em;
+}
+
+input[type="number"]{
+  text-align: center;
+  display: block;
+}
+
+
+section input {
+  display: ;
+  justify-content: center;
+}
+
+section.form {
+  display: block;
+  margin: auto;
+}
+
+input[type="text"] {
+  padding: 1em;
+  border-radius: 0.5em;
+  border: none;
+  background-color: black;
+}
+
+input[type="text"]:focus {
+  background-color: black;
+}
+
+input[type="number"] {
+  padding: 1em;
+}
+
+input[type="button"] {
+  margin-top: 2em;
+  padding: 1em 2em;
+  color: white;
+  font-weight: 500;
+  background-color: rgb(82, 0, 125);
+  border-style: none;
+  font-weight: 400;
+  font-style: normal;
+}
+
+input[type="date"],
+input[type="text"],
+input[type="password"] {
+  font-size: 1em;
+  border: 0;
+  background: none;
+  display: block;
+  margin: 1.5em auto;
+  text-align: center;
+  border: 2px solid black;
+  padding: 1em 1em;
+  width: 280px;
+  outline: none;
+  color: white;
+  border-radius: 2em;
+  transition: 0.25s;
+}
+
+input[type="submit"]:focus,
+input[type="text"]:focus,
+input[type="date"]:focus {
+  width: 280px;
+  border-color: rgb(0, 174, 255);
+}
+
+input[type="text"] {
+  border-color: red;
+}
+
+input[type="text"]:valid,
+input[type="text"]:valid {
+  width: 280px;
+  border-color: palegreen;
+}
+
+input:valid {
+  border-color: palegreen;
+}
+
+input:invalid {
+  border-color: MediumVioletRed;
+  background: LightPink;
+}
+
+input[type="submit"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 1.5em auto;
+  text-align: center;
+  border: 2px solid black;
+  padding: 1em 2em;
+  outline: none;
+  color: white;
+  border-radius: 1.5em;
+  transition: 0.25s;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background: black;
+}
+
+.radiobuttons{
+  display: flex;
+}
+
+input[type="radio"] {
+  
+}
+
+/* einde formulier opmaak */
 
 a {
   text-decoration: none;
   color: white;
 }
 
-li a:hover {
-  background-color: purple;
+h4 {
+  text-decoration: none;
+  color: white;
+  transition: ease-in-out 1s;
+}
+h4:hover {
+  color: orange;
+  transform: rotateZ(180deg);
 }
 
-button:hover {
-  background-color: purple;
-}
 
-main.productpage {
-  /* maak van main een grid container */
+
+.productpage {
+  /* maak vansection een grid container */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
   /* grid-template-columns: repeat(4, 1fr); */
   grid-template-rows: 1fr 1fr 1fr;
-  grid-gap: ;
+  /* grid-gap: ; */
   border-radius: 1em;
 }
 
@@ -130,6 +321,108 @@ iframe {
   border-radius: 1em;
 }
 
+.container {
+  position: relative;
+  /* text-align:; */
+  color: white;
+}
+
+figure img {
+  border-radius: 1em;
+}
+
+figure {
+  /* position van de parent moet van static (de default) naar relative */
+
+  position: relative;
+
+  max-width: 40em;
+  margin: 0 auto;
+
+  /* door flex + coloumn-reverse staat figcaption visueel boven img */
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+figcaption {
+  font-size: 1.5em;
+  line-height: 1.25em;
+  padding: 0.675em; /* For MS Edge en co */
+  padding-block: 0.5em;
+  padding-inline: 0.75em;
+  font-weight: bold;
+  color: #fff;
+  background-color: rgba(255, 0, 128, 1); /* color for Naomi */
+  opacity: 0.875;
+  border-radius: 0.3em;
+
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  right: 1em;
+}
+
+figcaption p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+
+
+h1 {
+  text-align: center;
+  transition:ease-in-out 1s;
+  padding: 0.5em 0em;
+  background-color: purple;
+}
+
+h1:hover {
+  text-align: center;
+  transition:ease-in-out 0.5s;
+  background-color: darkorchid;
+  cursor: help;
+}
+
+.groot {
+ /* text-transform: scale(3); */
+ transition:ease-in-out 0.5s;
+ padding: 1em 0em;
+ /* background-color: cornflowerblue; */
+ display: block;
+ font-size: 5em;
+
+ /* https://leaverou.github.io/css3patterns/#waves */
+ background:
+ radial-gradient(circle at 100% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent),
+ radial-gradient(circle at 0% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent) 0 -50px;
+ background-color: slategray;
+ background-size:75px 100px;
+
+}
+
+a:focus {
+  outline: 1px solid rgb(0, 174, 255);
+}
+
+ {
+  width: 300px;
+  padding: 2.5em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(82, 0, 125);
+  border-radius: 1em;
+  text-align: center;
+}
+h1 {
+  color: white;
+  font-weight: 500;
+  padding-bottom: 1em;
+}
+
+
+
 @media only screen and (max-width: 375px) {
   nav {
     background-color: #272727;
@@ -141,14 +434,14 @@ iframe {
     display: flex;
     flex-direction: row;
     list-style: none;
-    font-size: 14px;
+    font-size: 1em;
     /* justify-content: space-around; */
   }
 
   li a {
     display: inline-block;
     color: white;
-    background-color: #d483ff;
+    background-color: rgb(82, 0, 125);
     text-align: center;
     padding: 1em 1.5em;
     margin: 0.7em 0em 0.7em 0.5em;
@@ -160,7 +453,37 @@ iframe {
     background-color: red;
   }
 
-  main {
+  li a::before{
+      content: "";
+      display: block;
+      background: no-repeat url("/images/iconhome.svg");
+      width: 1.5em;
+      height: 1.5em;
+      margin: 0em 0.5em 0em 0em;
+  }
+
+  section {
     padding: 0em 0em 1em 0em;
+  }
+
+  section.form {
+    margin-left: 1em;
+  }
+
+  input#text {
+    width: 70vw;
+  }
+
+  article {
+    margin-top: 1em;
+    margin-bottom: 0em;
+  }
+  section.productpage {
+    padding: 0em;
+    margin: 0em;
+    grid-gap: 0em;
+  }
+  form{
+    width:80vw;
   }
 }

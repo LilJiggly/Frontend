@@ -17,13 +17,13 @@
       <nav>
         <ul>
           <li>
-            <a href="/index.html">
+            <a href="/">
               Home
             </a>
           </li>
 
           <li>
-            <a href="?.html">
+            <a href="/form">
               Activiteiten
             </a>
           </li>
@@ -91,36 +91,56 @@
       </nav>
     </header>
 
-    <section class="productpage">
-      <article>
-        <img src="/images/bakker.jpg" />
-      </article>
-      <article>
-        <div class="text">
-          <h2>Bakkerij Bread Ahead</h2>
-          <p>
-            Bread Ahead was founded by Matthew Jones in 2013, who has been in
-            the business and making bread for over 25 years. His mission is to
-            bring quality baking to the masses. Bread Ahead opened its doors in
-            September 2013 supplying fresh produce daily to Borough Market
-            customers and a range of local restaurants and delis. The Bakery
-            School opened in February 2014 and is designed to show the public
-            just how easy baking good bread can be.
-          </p>
-        </div>
-      </article>
-      <article>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19868.561143090777!2d-0.14207364928307278!3d51.50275529658834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487603570f8d0007%3A0xf57270d04805e5d2!2sBread%20Ahead!5e0!3m2!1snl!2snl!4v1575400505714!5m2!1snl!2snl"
-        ></iframe>
-      </article>
-      <article>
-        <a src="../form.html">
-          <button type="submit">Boek deze activiteit</button>
-        </a>
-        </form>
-      </article>
-    </section>
+    <form>
+      <fieldset>Vul dit formulier in</fieldset>
+
+      <label for="Voornaam">Voornaam</label>
+      <input
+        id="text"
+        name="Voornaam"
+        type="text"
+        value=""
+        placeholder="Voornaam"
+        style="text-transform: capitalize;"
+      />
+
+      <label for="Achternaam">Achternaam</label>
+      <input
+        id="text"
+        name="Achternaam"
+        type="text"
+        value=""
+        placeholder="Achternaam"
+        style="text-transform: capitalize;"
+      />
+
+      <label for="Vertrekdatum" required>Vertrekdatum</label>
+      <input type="date" name="Vertrekdatum" autocomplete="true" />
+
+      <label for="Terugdatum">Terugdatum</label>
+      <input type="date" name="Terugdatum" placeholder="" />
+
+      <label for="Aantal">Aantal Reizigers</label>
+      <input type="number" />
+
+      <label for="radio">Hoeveel Kilo Bagage neemt u mee?</label>
+      <input type="radio" id="Amsterdam" name="radio" value="huey" checked />
+
+      <label for="Amsterdam">5kg</label>
+
+      <input type="radio" id="Parijs" name="radio" value="huey" checked />
+      <label for="Parijs">10kg</label>
+
+      <input type="radio" id="Berlijn" name="radio" value="huey" checked />
+      <label for="Berlijn">20kg</label>
+
+      <input
+        type="button"
+        id="submit"
+        name="submit"
+        value="Speciaal ingeladen font voor de Submit knop"
+      />
+    </form>
 
     <script src="js/javascript.js"></script>
   </body>
