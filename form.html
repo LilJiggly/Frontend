@@ -96,7 +96,7 @@
 
       <label for="Voornaam">Voornaam</label>
       <input
-        id="text"
+        id="Voornaam"
         name="Voornaam"
         type="text"
         value=""
@@ -106,7 +106,7 @@
 
       <label for="Achternaam">Achternaam</label>
       <input
-        id="text"
+        id="Achternaam"
         name="Achternaam"
         type="text"
         value=""
@@ -115,30 +115,35 @@
       />
 
       <label for="Vertrekdatum" required>Vertrekdatum</label>
-      <input type="date" name="Vertrekdatum" autocomplete="true" />
+      <input
+        type="date"
+        id="Vertrekdatum"
+        name="Vertrekdatum"
+        autocomplete="true"
+      />
 
       <label for="Terugdatum">Terugdatum</label>
-      <input type="date" name="Terugdatum" placeholder="" />
+      <input type="date" id="Terugdatum" name="Terugdatum" placeholder="" />
 
       <label for="Aantal">Aantal Reizigers</label>
-      <input type="number" />
+      <input type="number" id="Aantal" />
 
       <label for="radio">Hoeveel Kilo Bagage neemt u mee?</label>
-      <input type="radio" id="Amsterdam" name="radio" value="huey" checked />
 
-      <label for="Amsterdam">5kg</label>
+      <input type="radio" id="5kg" name="radio" value="huey" checked />
+      <label for="5kg">5kg</label>
 
-      <input type="radio" id="Parijs" name="radio" value="huey" checked />
-      <label for="Parijs">10kg</label>
+      <input type="radio" id="10kg" name="radio" value="huey" checked />
+      <label for="10kg">10kg</label>
 
-      <input type="radio" id="Berlijn" name="radio" value="huey" checked />
-      <label for="Berlijn">20kg</label>
+      <input type="radio" id="20kg" name="radio" value="huey" checked />
+      <label for="20kg">20kg</label>
 
       <input
         type="button"
         id="submit"
         name="submit"
-        value="Speciaal ingeladen font voor de Submit knop"
+        value="Verstuur je info zodat ik deze kan verkopen"
       />
     </form>
 
